@@ -25,7 +25,7 @@ Paste the url into your browser, replacing `webcal://` with `https://` - this wi
 5. Copy the .vcf file back to your sdcard on your phone, delete all your phone contacts. (in android, Settings -\> Apps -\> All Applications -> Contacts Storage -\> Clear Data)
 6. Import the new out.vcf file in the address book.
 
-On some versions of android the birthdays don't show up in the addressbook because google can't be bothered to even write a competent version of a vcard reader. (Note that the bday field has been included in every version of the vcard specification since the start.) In such a case, you can use something [birthday adapter](http://sufficientlysecure.org/birthday-adapter) which will put the birthdays into your android calendar. 
+On some versions of android the birthdays don't show up in the addressbook because google can't be bothered to even write a competent version of a vcard reader. (Note that the bday field has been included in every version of the vcard specification since the start.) In such a case, you can use something like [birthday adapter](http://sufficientlysecure.org/birthday-adapter) which will put the birthdays into your android calendar. 
 
 If all you wanted was to add the birthdays in your calendar and you don't care about mantaining the vCard file, you could just attempt to import the .ics file to your calendar, and skip all this mess in the first place.
 
