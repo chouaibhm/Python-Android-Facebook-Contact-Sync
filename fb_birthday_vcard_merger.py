@@ -1,4 +1,8 @@
 #!/usr/bin/env python2
+__author__ = 'f41c0r'
+__license__ = "GPL"
+__version__ = "1.1"
+
 
 import vobject, sys, os, subprocess
 
