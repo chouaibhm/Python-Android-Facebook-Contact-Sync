@@ -4,7 +4,7 @@
 In order to use this python script to download your contact photos, you will need to get a copy of the list of all your facebook friends. In order to do this, go to your friends page on your timeline. This page loads the list of your friends as you scroll further down the page, using javascript. In order to get your full list of friends, you will need a way to download the generated page's html source **after** you've already scrolled down and gotten all of your friends on the page. If you have firefox, you can achieve this by using [the web developer add-on](http://chrispederick.com/work/web-developer/). Select "View Source" -\> "View Generated Source." Probably it will take a minute and your computer's CPU and fan will spin up. Wait a while and a new window will pop-up with the source html for the page. Click "File" -\> "Save As" and save it as index.html. We'll need this file for the script.
 ![Facebook screenshot of the friends page showing how to download source](http://i.imgur.com/xFilq60.png)
 
-1. Clone this repo. `git clone https://github.com/f41c0r/fb_birthday_vcard_merger.git`
+1. Clone this repo. `git clone https://github.com/f41c0r/Python-Android-Facebook-Contact-Sync.git`
 2. Move the file into the repo. Make sure it's named `index.html`.
 3. Export your existing contacts from android into a vcf file using the android contacts file. Place it in the same directory, and name it `in.vcf`.
 4. Execute the `fb_picture_scrape_add_to_vcard.py` python script. It may take a minute or two.
@@ -18,7 +18,7 @@ Go to Facebook, and go to the events page. At the bottom, right click the link t
 
 Paste the url into your browser, replacing `webcal://` with `https://` - this will prompt download of the ics file from Facebook.
 
-1. Clone this repo. `git clone https://github.com/f41c0r/fb_birthday_vcard_merger.git`
+1. Clone this repo. `git clone https://github.com/f41c0r/Python-Android-Facebook-Contact-Sync.git`
 2. Rename and move the file to `facebook_birthdays.ics`.
 3. Export your adressbook to a .vcf file and place it in the same directory, name it `contacts.vcf`
 4. Run the `fb_birthday_vcard_merger.py` python script. The -a argument may also be of interest as well.
