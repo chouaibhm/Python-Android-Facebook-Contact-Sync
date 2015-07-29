@@ -2,7 +2,7 @@
 
 import vobject, sys, os, subprocess
 
-versionNumber = 1.0
+versionNumber = 1.1
 
 def usage():
     print >> sys.stderr, "Usage:  %s [OPTIONS]" % (sys.argv[0])
@@ -66,18 +66,16 @@ def main(argv):
     contents = contents.decode('utf-8')
     f.close()
     
-    newcal = vobject.iCalendar()
+    newvcf = []
     
     components = vobject.readComponents(contents, validate=True)
     for component in components:
         for child in component.getChildren():
-            add_entry = True
             if child.name == "FN":
                 if child.value in bDayDict:
-                    print child.value
                     component.add('bday')
                     component.bday.value = bDayDict.pop(child.value)
-        newcal.add(component)
+        newvcf.append(component)
 
     if doAdd:
         nonexistantContacts = bDayDict.items()
@@ -94,16 +92,13 @@ def main(argv):
             v.bday.value = contact[1]
             v.add('version')
             v.version.value = "2.1"
-            newcal.add(v)
+            newvcf.add(v)
 
     f = open("out1.vcf", 'wb')
-    f.write(newcal.serialize())
+    print newvcf
+    for vcard in newvcf:
+        f.write(vcard.serialize())
     f.close()
-    f = open("out.vcf","w")
-    head = subprocess.Popen(["head","-n-1","out1.vcf"], stdout=subprocess.PIPE)
-    subprocess.Popen(('tail', '-n+4'), stdin=head.stdout,stdout=f)
-    f.close()
-    os.remove("out1.vcf")
     
 if __name__ == "__main__":
        sys.exit(main(sys.argv)) 
